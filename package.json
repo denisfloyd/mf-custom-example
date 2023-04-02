@@ -1,0 +1,19 @@
+{
+  "name": "mf-custom-example",
+  "version": "1.0.0",
+  "description": "Module Federation Custom Example",
+  "author": "denisfloyd",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "wipe": "rm -fr node_modules packages/**/node_modules",
+    "build": "yarn workspaces run build",
+    "start": "concurrently \"wsrun --parallel start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.0.1",
+    "wsrun": "^5.2.4"
+  }
+}
