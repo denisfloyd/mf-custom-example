@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './TodoList.css';
+
 const TodoList = ({todos, onRemove}) => {
   return (
     <div>

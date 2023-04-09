@@ -1,3 +1,14 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
+button {
+  background-color: #CCAAFF;
+  border: 1px solid #000000;
+  color: #FFFFFF;
+  margin-left: 10px;
+}
+
+button,
+a {
+  cursor: pointer;
+}
