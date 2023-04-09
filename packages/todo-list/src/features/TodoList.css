@@ -11,8 +11,9 @@ li {
 p,
 span {
   margin: 0;
+  cursor: pointer;
 }
 
-span {
-  cursor: pointer;
+p.mark {
+  text-decoration: line-through;
 }
