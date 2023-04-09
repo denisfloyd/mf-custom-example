@@ -1,11 +1,14 @@
-const TodoList = () => {
-  const todoList = ["Todo 1", "Todo 2", "Todo 3"];
+import '/TodoList.css';
 
+const TodoList = ({todos, onMarkDone, onDelete}) => {
   return (
     <div>
       <ul>
-        {todoList.map((todo) => (
-          <li key={todo}>{todo}</li>
+        {todos.map((todo) => (
+          <li key={todo} onClick={onMarkDone}>
+            <p>{todo}</p>
+            <span onClick={onDelete}>X</span>
+          </li>
         ))}
       </ul>
     </div>
