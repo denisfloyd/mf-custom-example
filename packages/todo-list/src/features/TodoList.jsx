@@ -1,13 +1,13 @@
-import '/TodoList.css';
+import React from 'react';
 
-const TodoList = ({todos, onMarkDone, onDelete}) => {
+const TodoList = ({todos, onRemove}) => {
   return (
     <div>
       <ul>
-        {todos.map((todo) => (
-          <li key={todo} onClick={onMarkDone}>
+        {todos && todos.map((todo) => (
+          <li key={todo}>
             <p>{todo}</p>
-            <span onClick={onDelete}>X</span>
+            <span onClick={() => onRemove(todo)}>X</span>
           </li>
         ))}
       </ul>

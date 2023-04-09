@@ -27,10 +27,10 @@ module.exports = {
 
   plugins: [
     new ModuleFederationPlugin({
-      name: "todo-list",
+      name: "todoList",
       library: {
         type: "var",
-        name: "todo-list",
+        name: "todoList",
       },
       filename: "remoteEntry.js",
       exposes: {

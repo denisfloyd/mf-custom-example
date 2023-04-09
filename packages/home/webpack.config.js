@@ -37,7 +37,10 @@ module.exports = {
     new ModuleFederationPlugin({
       name: "home",
       library: { type: "var", name: "home" },
-      remotes: {},
+      remotes: {
+        "mf-todoAdd": "todoAdd",
+        "mf-todoList": "todoList",
+      },
       shared: require("./package.json").dependencies,
     }),
   ],
