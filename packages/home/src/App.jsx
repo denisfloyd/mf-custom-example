@@ -1,8 +1,7 @@
 import React, { Suspense, useState } from "react";
-import ReactDOM from "react-dom";
 
-const TodoAdd = React.lazy(() => import('mf-todoAdd/TodoAdd'))
-const TodoList = React.lazy(() => import('mf-todoList/TodoList'))
+const TodoAdd = React.lazy(() => import('mf-todoAdd/TodoAdd').then(module => ({ default: module.TodoAdd })))
+const TodoList = React.lazy(() => import('mf-todoList/TodoList').then(module => ({ default: module.TodoList })))
 
 import "./index.css";
 import './app.css';
@@ -48,6 +47,4 @@ const App = () => {
     )
 };
 
-ReactDOM.createRoot(document.getElementById("app")).render(
-    <App />
-);
+export default App;
