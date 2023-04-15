@@ -3,17 +3,13 @@ import {render, screen} from '@testing-library/react';
 import App from './App';
 
 jest.mock('mf-todoAdd/TodoAdd', () => {
-  return {
-    TodoAdd: () => <div className="test" data-testid="todoadd"/>
-  }
+  return () => <div className="test" data-testid="todoadd"/>
 }, {
   virtual: true
 })
 
 jest.mock('mf-todoList/TodoList', () => {
-  return {
-    TodoList: () => <div className="test" data-testid="todolist"/>
-  }
+  return () => <div className="test" data-testid="todolist"/>
 }, {
   virtual: true
 })
@@ -25,5 +21,8 @@ describe('App', () => {
   
     expect(await screen.findByTestId('todoadd')).toBeInTheDocument();
     expect(screen.getByTestId('todolist')).toBeInTheDocument();
-  })
+    screen.debug();
+  });
+
+  
 });
